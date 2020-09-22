@@ -1,0 +1,41 @@
+{
+  "name": "cv",
+  "private": false,
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "./src/index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval-source-map --progress --colors --hot --inline --env.dev",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@tarii/3d-earth": "^1.0.3",
+    "@types/three": "^0.103.2",
+    "three": "^0.107.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^4.16.6",
+    "@types/file-loader": "^4.2.0",
+    "@types/mini-css-extract-plugin": "^0.9.1",
+    "@types/stylus": "^0.48.33",
+    "@types/webpack-dev-server": "^3.9.0",
+    "css-loader": "^4.3.0",
+    "eslint": "^6.1.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "file-loader": "^6.1.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "raw-loader": "^1.0.0",
+    "style-loader": "^1.2.1",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
