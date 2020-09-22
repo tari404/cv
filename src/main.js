@@ -24,7 +24,9 @@ const earth = new Earth({
     -18.06, 178.30,
     -6.09, 106.49
   ],
-  minLineSpacing: 60
+  minLineSpacing: 80,
+  maxLineSpacing: 140,
+  rotateSpeed: 0.001,
 })
  
 earth.start()

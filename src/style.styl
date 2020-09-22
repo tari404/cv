@@ -2,7 +2,9 @@ $black = #0f1418
 
 body
   margin 0
-  font-family 'PingFang SC', 'Microsoft YaHei',
+  font-family 'PingFang SC', 'Microsoft YaHei'
+  color $black
+  background-color $black
 canvas
   background-color $black
 a
@@ -17,6 +19,19 @@ a
     color inherit
 p
   margin 0
+h2
+  margin 0
+  font-weight 500
+  font-size 24px
+  span
+    font-size 20px
+    font-weight 200
+    opacity .3
+
+.main-width
+  margin auto
+  padding 0 20px
+  max-width 1400px
 
 #banner
   position fixed
@@ -40,8 +55,6 @@ p
   position relative
 
 #avatar
-  margin-left 10vw
-  max-width 90vw
   height 40vh
   overflow hidden
   color #fff
@@ -59,9 +72,23 @@ p
     position absolute
     bottom 20px
     left 0
-    background-color rgba($black, .2)
-    padding 30px 300px 10px
-    border-radius 100px
+    background-color rgba($black, .4)
+    padding 30px 360px 10px 320px
+    border-radius 86px
+    &:after
+      content ''
+      padding 4px
+      position absolute
+      top 50%
+      right 86px
+      width 8px
+      height 8px
+      border-radius 50%
+      border solid 2px #fff
+      background-clip content-box
+      background-color #fff
+      transform translate3d(-50%, -50%, 0)
+      opacity .2
   .my-name
     margin 0
     font-size 40px
@@ -93,17 +120,41 @@ p
     &:hover
       opacity .8
 
-#container
-  padding 30px 10vw
-  display flex
-  flex-direction column
+section
+  padding 40px 0
   background-color #fff
-  font-size 18px
-  line-height 1.8em
-  font-weight 200
   position relative
   >div
-    margin 30px 0
+    display flex
+    flex-direction column
+    font-size 18px
+    line-height 1.8em
+    font-weight 200
+    position relative
+section:not(:last-of-type)
+  border-bottom solid 2px $black
+  &:after
+    content ''
+    position absolute
+    bottom -1px
+    left 50%
+    width 14px
+    height 14px
+    border-radius 50%
+    background-color $black
+    transform translate3d(-50%, 50%, 0)
+    z-index 5
+
+
+#basic
+  ul
+    margin 20px 0 0 0
+  li
+    margin 8px 0
+
+#plus
+  .item
+    margin 50px 0 10px
     display flex
     align-items center
     &:hover
@@ -133,16 +184,20 @@ p
     background-color $black
     border-radius 3px
     transition .2s .1s ease-out
+  b
+    font-weight 500
 
 #xmas
+  margin auto
+  padding 0 20px
+  max-width 1600px
   display flex
   justify-content space-between
   align-items center
   background-color #0f1418
-
-#xmas
   position relative
   span
+    flex 0 0 12px
     width 12px
     height 12px
     display block
@@ -152,15 +207,17 @@ p
 .xmas-img
   width 70vw
   height 36vw
+  max-height 540px
   background no-repeat url('./assets/xmas.jpeg') left center / contain
 .xmas-tree
   width 26vw
   height 36vw
+  max-height 540px
   background-color $black
 
 .slogan
   margin 0
-  padding 20px 0 80px
+  padding 20px 0 60px
   background-color #fff
   text-align center
   font-size 40px
@@ -179,7 +236,7 @@ footer
     .me
       left 220px
     .intro
-      margin 0
+      left 10vw
       padding 30px 0 10px
       width 80vw
       box-sizing border-box
