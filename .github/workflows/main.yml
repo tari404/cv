@@ -20,7 +20,7 @@ jobs:
 
       - name: Create output folder 📦
         run: |
-          mkidr build
+          mkdir build
           mv dist build
           mv public build
           mv index.html build
