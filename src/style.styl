@@ -3,6 +3,8 @@ $black = #0f1418
 body
   margin 0
   font-family 'PingFang SC', 'Microsoft YaHei'
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
   color $black
   background-color $black
 canvas
@@ -19,13 +21,13 @@ a
     color inherit
 p
   margin 0
+  line-height 1.8em
 h2
   margin 0
   font-weight 500
   font-size 24px
   span
     font-size 20px
-    font-weight 200
     opacity .3
 
 .main-width
@@ -129,7 +131,7 @@ section
     flex-direction column
     font-size 18px
     line-height 1.8em
-    font-weight 200
+    color rgba($black, .8)
     position relative
 section:not(:last-of-type)
   border-bottom solid 2px $black
@@ -187,6 +189,74 @@ section:not(:last-of-type)
   b
     font-weight 500
 
+#exps
+  padding 40px 0
+  background-color #0f1418
+  color #fff
+  >div
+    position relative
+  ul
+    margin 30px 0
+    padding 0
+    list-style none
+  li
+    display flex
+  .time
+    flex 0 0 300px
+    font-size 20px
+    font-family 'ZCOOL XiaoWei', serif
+  .title
+    font-size 18px
+    line-height 36px
+    position relative
+    font-family inherit !important
+    &:before
+      position absolute
+      top 0
+      left -30px
+      font-size 20px
+      font-family 'remixicon' !important
+  .position
+    opacity .6
+  .intro
+    margin 14px 0 24px
+    font-size 18px
+  .work
+    margin 14px 0 10px
+    display flex
+    opacity .6
+    transition .1s
+    &:hover
+      opacity 1
+    img
+      width 280px
+      margin-right 20px
+    a
+      display flex
+      align-items center
+      i
+        margin-right 4px
+  .tags
+    flex 0 0 140px
+    display flex
+    flex-direction column
+    align-items flex-end
+    span
+      padding 0 16px
+      line-height 28px
+      border-radius 15px
+      border solid 1px #fff
+      margin-bottom 14px
+      opacity .6
+      transition opacity .16s
+      cursor default
+      &:hover
+        opacity .9
+
+#works
+  padding 40px 0
+  background-color #fff
+
 #xmas
   margin auto
   padding 0 20px
@@ -243,8 +313,8 @@ footer
       p
         position relative
         z-index 2
-  #container
-    >div
+  #plus
+    .item
       flex-direction column
     .icon
       margin 0 60px 20px
