@@ -7,7 +7,7 @@ module.exports = env => ({
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/'
+    publicPath: (env && env.dev) ? '/dist/' : '/cv/dist/'
   },
   module: {
     rules: [
