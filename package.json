@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "./src/index.js",
+  "homepage": "https://tari404.github.io/cv/",
   "scripts": {
     "dev": "webpack-dev-server --devtool eval-source-map --progress --colors --hot --inline --env.dev",
     "build": "webpack"

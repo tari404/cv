@@ -32,7 +32,7 @@ h2
 
 .main-width
   margin auto
-  padding 0 20px
+  padding 0 30px
   max-width 1400px
 
 #banner
@@ -75,7 +75,7 @@ h2
     bottom 20px
     left 0
     background-color rgba($black, .4)
-    padding 30px 360px 10px 320px
+    padding 30px 360px 10px 330px
     border-radius 86px
     &:after
       content ''
@@ -149,10 +149,23 @@ section:not(:last-of-type)
 
 
 #basic
+  .content
+    display flex
   ul
     margin 20px 0 0 0
   li
     margin 8px 0
+  .front-end
+    margin-left 60px
+    flex 0 0 300px
+    background no-repeat url('./assets/vis-frontend.png') center / contain
+    filter grayscale(.8)
+    transition filter .2s ease, transform .2s ease
+  &:hover
+    .front-end
+      filter grayscale(0)
+      transform scale(1.05)
+      transition filter .4s cubic-bezier(0.43, -0.68, 0.74, 0.05), transform .4s cubic-bezier(0.43, -0.68, 0.74, 0.05)
 
 #plus
   .item
@@ -163,7 +176,7 @@ section:not(:last-of-type)
       .icon
         filter grayscale(0)
         transform scale(1.05)
-        transition all .4s cubic-bezier(0.43, -0.68, 0.74, 0.05)
+        transition filter .4s cubic-bezier(0.43, -0.68, 0.74, 0.05), transform .4s cubic-bezier(0.43, -0.68, 0.74, 0.05)
       i
         width 28px
         height 28px
@@ -177,7 +190,7 @@ section:not(:last-of-type)
     background-size contain
     background-position center
     filter grayscale(.8)
-    transition all .2s ease
+    transition filter .2s ease, transform .2s ease
   i
     flex 0 0 6px
     margin 30px
@@ -201,6 +214,8 @@ section:not(:last-of-type)
     list-style none
   li
     display flex
+    &:not(:last-child)
+      margin-bottom 60px
   .time
     flex 0 0 300px
     font-size 20px
@@ -222,36 +237,46 @@ section:not(:last-of-type)
     margin 14px 0 24px
     font-size 18px
   .work
-    margin 14px 0 10px
+    margin-top 16px
     display flex
     opacity .6
-    transition .1s
+    transition .2s
+    &:not(:last-child)
+      margin-bottom 36px
     &:hover
       opacity 1
     img
-      width 280px
+      width 240px
+      border-radius 0 6px 0 6px
       margin-right 20px
+    p
+      flex 1 1 auto
     a
+      width 110px
+      float left
       display flex
       align-items center
       i
         margin-right 4px
   .tags
     flex 0 0 140px
+    margin 8px 0
     display flex
     flex-direction column
     align-items flex-end
     span
-      padding 0 16px
-      line-height 28px
-      border-radius 15px
-      border solid 1px #fff
       margin-bottom 14px
+      padding 0 14px
+      line-height 22px
+      background-color #fff1
+      border-radius 12px
+      border solid 1px #fff
+      font-size 14px
       opacity .6
       transition opacity .16s
       cursor default
       &:hover
-        opacity .9
+        opacity .8
 
 #works
   padding 40px 0
@@ -313,6 +338,12 @@ footer
       p
         position relative
         z-index 2
+  #basic
+    .content
+      flex-direction column-reverse
+    .front-end
+      margin 20px 0
+      flex 0 0 140px
   #plus
     .item
       flex-direction column
@@ -320,4 +351,17 @@ footer
       margin 0 60px 20px
       flex 0 0 100px
       width 180px
-      
+  #exps
+    .time
+      flex 0 0 80px
+      writing-mode vertical-lr
+    .work
+      flex-direction column
+      >div
+        margin-bottom 14px
+        display flex
+    .tags
+      flex 0 0 auto
+      flex-direction row
+      span
+        margin 0 14px 0 0
