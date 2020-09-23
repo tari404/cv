@@ -123,8 +123,8 @@ h2
       opacity .8
 
 section
-  padding 40px 0
-  background-color #fff
+  padding 60px 0
+  background-color #f9f9f9
   position relative
   >div
     display flex
@@ -203,7 +203,7 @@ section:not(:last-of-type)
     font-weight 500
 
 #exps
-  padding 40px 0
+  padding 60px 0
   background-color #0f1418
   color #fff
   >div
@@ -247,7 +247,7 @@ section:not(:last-of-type)
       opacity 1
     img
       width 240px
-      border-radius 0 6px 0 6px
+      border-radius 0 8px 0 8px
       margin-right 20px
     p
       flex 1 1 auto
@@ -279,8 +279,75 @@ section:not(:last-of-type)
         opacity .8
 
 #works
-  padding 40px 0
-  background-color #fff
+  padding 60px 0
+  background-color #f9f9f9
+  ul
+    margin 30px 0
+    padding 0
+    list-style none
+  li
+    display flex
+    padding-left 30px
+    &:not(:last-child)
+      margin-bottom 60px
+    &:hover
+      .title:before
+        width 8px
+        height 8px
+        border-width 2px
+        transition all .2s
+      img
+        filter grayscale(0)
+      img:nth-child(odd)
+        transform translateY(-6px)
+      img:nth-child(even)
+        transform translateY(6px)
+    >div:first-child
+      flex 1 1 auto
+  .title
+    font-weight 600
+    font-size 18px
+    line-height 36px
+    position relative
+    &:before
+      content ''
+      position absolute
+      top 50%
+      left -18px
+      width 0px
+      height 0px
+      border-radius 50%
+      border solid 4px $black
+      transform translate3d(-50%, -50%, 0)
+      transition all .16s
+  .tags
+    opacity .6
+  .intro
+    margin 14px 0
+    font-size 18px
+    opacity .8
+  .images
+    margin-left 20px
+    display flex
+    align-items center
+    img
+      width 200px
+      height 125px
+      border-radius 0 8px 0 8px
+      margin 6px
+      filter grayscale(.6)
+      transition all .1s ease-out
+  a
+    position relative
+    display flex
+    opacity .8
+    &:before
+      position absolute
+      top 50%
+      left -24px
+      transform translateY(-50%)
+  code
+    font-size 16px
 
 #xmas
   margin auto
@@ -313,7 +380,7 @@ section:not(:last-of-type)
 .slogan
   margin 0
   padding 20px 0 60px
-  background-color #fff
+  background-color #f9f9f9
   text-align center
   font-size 40px
   color rgba($black, .8)
@@ -321,7 +388,7 @@ section:not(:last-of-type)
 
 footer
   padding 4px 0
-  background-color #fff
+  background-color #f9f9f9
   font-size 14px
   color rgba($black, .4)
   text-align center
