@@ -97,6 +97,8 @@ h2
     margin 0
     font-size 40px
     line-height 1em
+    display flex
+    align-items flex-end
     position relative
     color rgba(#fff, .9)
     &:before
@@ -110,6 +112,16 @@ h2
       font-weight 800
       color rgba(#fff, .1)
       text-transform uppercase
+    span
+      margin-left 10px
+      font-size 16px
+      line-height 16px
+      font-weight 500
+      opacity .5
+  .years
+    margin-right 10px
+    font-weight 500
+    opacity .5
   p
     margin 10px 0 0
   a
@@ -155,8 +167,12 @@ section:not(:last-of-type)
     display flex
   ul
     margin 20px 0 0 0
+    padding-left 2em
   li
     margin 8px 0
+  p
+    margin-top 18px
+    text-indent 2em
   .front-end
     margin-left 60px
     flex 0 0 300px
