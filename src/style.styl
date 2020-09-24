@@ -114,7 +114,7 @@ h2
     margin 10px 0 0
   a
     display flex
-    font-size: 14px
+    font-size 14px
     align-items center
     opacity .5
     transition .2s
@@ -162,12 +162,12 @@ section:not(:last-of-type)
     flex 0 0 300px
     background no-repeat url('./assets/vis-frontend.png') center / contain
     filter grayscale(.8)
-    transition filter .2s ease, transform .2s ease
+    transition filter .2s ease-out, transform .2s ease
   &:hover
     .front-end
       filter grayscale(0)
       transform scale(1.05)
-      transition filter .4s cubic-bezier(0.43, -0.68, 0.74, 0.05), transform .4s cubic-bezier(0.43, -0.68, 0.74, 0.05)
+      transition filter .2s ease-out, transform .4s cubic-bezier(0.43, -0.68, 0.74, 0.05)
 
 #plus
   .item
@@ -178,7 +178,7 @@ section:not(:last-of-type)
       .icon
         filter grayscale(0)
         transform scale(1.05)
-        transition filter .4s cubic-bezier(0.43, -0.68, 0.74, 0.05), transform .4s cubic-bezier(0.43, -0.68, 0.74, 0.05)
+        transition filter .2s ease-out, transform .4s cubic-bezier(0.43, -0.68, 0.74, 0.05)
       i
         width 28px
         height 28px
@@ -192,7 +192,7 @@ section:not(:last-of-type)
     background-size contain
     background-position center
     filter grayscale(.8)
-    transition filter .2s ease, transform .2s ease
+    transition filter .2s ease-out, transform .2s ease
   i
     flex 0 0 6px
     margin 30px
@@ -203,6 +203,65 @@ section:not(:last-of-type)
     transition .2s .1s ease-out
   b
     font-weight 500
+  
+#more
+  .container
+    display flex
+    >div
+      margin-left 40px
+      flex 0 0 220px
+      background no-repeat url('./assets/developer.svg') center / cover
+      background-position-x 50%
+      position relative
+      filter grayscale(.8)
+      transition filter .2s ease-out
+      a
+        position absolute
+        right 0px
+        bottom 0px
+        display flex
+        align-items center
+        font-size 12px
+        opacity .3
+        transition opacity .16s
+        &:hover
+          opacity .6
+        i
+          margin-right 4px
+          font-size 14px
+  .container:hover>div
+    filter grayscale(0)
+  ul
+    margin 30px 0
+    padding 0
+    list-style none
+  li
+    display flex
+    &:not(:last-child)
+      margin-bottom 60px
+  .title
+    margin-right 50px
+    flex 0 0 210px
+    font-size 20px
+    line-height 1.8em
+    display flex
+    flex-direction column
+    align-items flex-end
+    div
+      width 100%
+      height 8px
+      background-image linear-gradient(to left, #d2d2d8, #ececec)
+      display flex
+      justify-content flex-end
+      &:after
+        content attr(after)
+        position absolute
+        opacity .6
+    i
+      height 8px
+      background-image linear-gradient(to left, #5d5f61, $black)
+  p
+    margin 2px 0
 
 #exps
   padding 60px 0
@@ -249,6 +308,7 @@ section:not(:last-of-type)
       opacity 1
     img
       width 240px
+      height 150px
       border-radius 0 8px 0 8px
       margin-right 20px
     p
@@ -420,6 +480,11 @@ footer
       margin 0 60px 20px
       flex 0 0 100px
       width 180px
+  #more
+    .container >div
+      display none
+    .title
+      flex 0 0 140px
   #exps
     .time
       flex 0 0 80px
@@ -434,3 +499,11 @@ footer
       flex-direction row
       span
         margin 0 14px 0 0
+  #works
+    li
+      flex-direction column
+    .images
+      margin 20px 0 0 0
+      img
+        width 160px
+        height 100px

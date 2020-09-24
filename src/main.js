@@ -38,3 +38,32 @@ const tree = new Tree({
 })
 
 tree.start()
+
+const throttle = (fn, time) => {
+  let locked = false
+  const tfn = function (...arg) {
+    if (locked) return
+    locked = true
+    fn.call(this, ...arg)
+    setTimeout(() => {
+      locked = false
+    }, time)
+  }
+  Object.defineProperty(tfn, 'locked', { get: () => locked })
+  return tfn
+}
+
+const moveBg = document.querySelector('#more-bg')
+const top = moveBg.getBoundingClientRect().top + window.scrollY
+setTimeout(() => {
+  moveBg.style.transition = 'filter .2s ease-out, background-position-x .1s'
+}, 0)
+const onScroll = () => {
+  const dy = window.scrollY - top
+  let dx = 50 + dy / 24
+  dx = Math.min(Math.max(24, dx), 60)
+  moveBg.style.backgroundPositionX = dx + '%'
+}
+onScroll()
+
+window.addEventListener('scroll', throttle(onScroll, 30))
